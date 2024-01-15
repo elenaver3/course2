@@ -19,12 +19,12 @@
                     <a class="nav-link" href="index.php">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="search.php">Поиск</a>
+                    <a class="nav-link active" href="search.php">Поиск</a>
                 </li>
                 <?php
                     if(isset($session_user)) {
                         echo '<li class="nav-item">
-                                <a class="nav-link active" href="personal.php">Личный кабинет</a>
+                                <a class="nav-link" href="personal.php">Личный кабинет</a>
                             </li>';
                         echo '<li class="nav-item">
                                 <a class="nav-link" href="logout.php">Выйти</a>
@@ -42,7 +42,7 @@
         </div>
     </nav>
     <main>
-        <!-- <button><a href="logout.php">Выйти</a></button> -->
+        
     </main>
 </body>
 </html>

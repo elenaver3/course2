@@ -17,7 +17,7 @@
 
     if (isset($id)) {
         session_start();
-        $_SESSION["user"] = $id;
+        $_SESSION["user_id"] = $id;
         header("Location: personal.php");
         $stmt->close();
     }
