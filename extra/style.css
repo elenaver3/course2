@@ -11,11 +11,13 @@ main {
 
 
 .header{
-    background-image: url('files/space.jpeg');
+    background-image: url('files/books.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     height: 550px;
+    
+
 }
 
 .overlay{
@@ -24,4 +26,59 @@ main {
     min-width: 100%;
     left: 0;
     top: 100;
+    /* filter: brightness(40%); */
+}
+
+.navbar, footer {
+    background-color: #BEFA8D !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.map {
+    width: 600px;
+    height: 400px;
+}
+
+@media screen and (max-width: 480px) {
+    map {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+.place_photo {
+    width: 500px;
+    height: 300px;
+}
+
+.copyright {
+    font-size: 14px;
+    text-align: center;
+}
+
+h1, h2, h3, .overlay_color {
+    color: #C18D31;
+}
+
+h4 {
+    color: #55B605;
+}
+
+.back_color {
+    background-color: #FFFAB3;
+}
+
+.text_d {
+    text-decoration: underline;
+}
+
+.block_t {
+    font-size: 20px;
+}
+
+p {
+    font-size: 20px;
 }
