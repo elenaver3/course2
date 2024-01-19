@@ -11,7 +11,8 @@ main {
 
 
 .header{
-    background-image: url('files/books.jpg');
+    /* background-image: url('files/books.jpg'); */
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.55)),url('files/books.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -59,9 +60,11 @@ a {
     text-align: center;
 }
 
-h1, h2, h3, .overlay_color {
+h1, h2, h3{
     color: #C18D31;
 }
+
+
 
 h4 {
     color: #55B605;
@@ -82,3 +85,11 @@ h4 {
 p {
     font-size: 20px;
 }
+
+.overlay_color {
+    color: #FFF890;
+}
+
+/* .logo_name {
+    font-size: 16px;
+} */

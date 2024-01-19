@@ -89,34 +89,41 @@
                     <div class="col-3"></div>
                     <div class="col">
                     <div class="container">
+                        <div class="row align-items-start pb-3">
+                            <div class="col col-sm-3">
+                                <input type="checkbox" id="all" name="all" value="all" class="check_all"/>
+                                <label for="all">Отметить всё</label>
+                            </div>
+                        </div>
                         <div class="row align-items-start">
-                            <div class="col-6 col-sm-3">
-                                <input type="checkbox" id="biblio" name="biblio" value="1" />
+                            <div class="col-4 col-sm-3">
+                                <input type="checkbox" id="biblio" name="biblio" value="1" class="sub" />
                                 <label for="biblio">Библиотеки</label>
                             </div>
-                            <div class="col-6 col-sm-3">
-                                <input type="checkbox" id="museum" name="museum" value="4" />
+                            <div class="col-4 col-sm-3">
+                                <input type="checkbox" id="museum" name="museum" value="4" class="sub" />
                                 <label for="museum">Музеи</label>
                             </div>
-                            <div class="col-6 col-sm-3">
-                                <input type="checkbox" id="cinema" name="cinema" value="2" />
+                            <div class="col-4 col-sm-3">
+                                <input type="checkbox" id="cinema" name="cinema" value="2" class="sub" />
                                 <label for="cinema">Кинотеатры</label>
                             </div>
                         </div>
                         <div class="row align-items-start">
-                            <div class="col-6 col-sm-3">
-                                <input type="checkbox" id="circus" name="circus" value="3" />
+                            <div class="col-4 col-sm-3">
+                                <input type="checkbox" id="circus" name="circus" value="3" class="sub" />
                                 <label for="circus">Цирки</label>
                             </div>
-                            <div class="col-6 col-sm-3">
-                                <input type="checkbox" id="theater" name="theater" value="6" />
+                            <div class="col-4 col-sm-3">
+                                <input type="checkbox" id="theater" name="theater" value="6" class="sub" />
                                 <label for="theater">Театры</label>
                             </div>
-                            <div class="col-6 col-sm-3">
-                                <input type="checkbox" id="park" name="park" value="5" />
+                            <div class="col-4 col-sm-3">
+                                <input type="checkbox" id="park" name="park" value="5" class="sub" />
                                 <label for="park">Парки</label>
                             </div>
                         </div>
+                        
                     </div>
                     </div>
                 </div>
@@ -177,9 +184,17 @@
                                 $prefer = $prefer . "6";
                         }
                         
-                        if ($prefer == "") {
-                            $prefer = "1, 2, 3, 4, 5, 6";
+                        // if ($prefer == "") {
+                        //     $prefer = "1, 2, 3, 4, 5, 6";
+                        // }
+                        // else {
+                        if(isset($_POST['all'])) {
+                            if($_POST['all'] == 'all_checked') {
+                                $prefer = "1, 2, 3, 4, 5, 6";
+                            }
                         }
+                        // }
+                        // echo $prefer;
 
                         $stmt = mysqli_prepare($mysql, "SELECT id, name, city, street_house FROM places WHERE check_distance(ROUND(?,6),ROUND(?,6),places.map_point_lat,places.map_point_long) <= ? AND places.id_place_type IN (?)");
                         $stmt->bind_param('ddds', $coords[0], $coords[1], $range, $prefer);
@@ -188,7 +203,7 @@
                         $stmt->store_result();
 
                         if ($stmt->num_rows > 0) {
-                            // echo '<div class="container">Поиск: <input type="text" name="new_search"></div>';
+                            
                             $stmt->bind_result($id, $name, $city, $street_house);
                             while ($stmt->fetch()) {
                                 echo '<div class="container p-3 mt-3 mb-3 border border-4 border-black ">
@@ -231,7 +246,17 @@
             ?>
         </div>
     </main>
-    
+    <footer class="bg-body-tertiary text-center text-lg-start">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    Веб-сервис разработан студентом Московского Политеха<br>
+                    Москва, 2024
+                </div>
+            </div>
+        </div>        
+    </footer>
     <script type="text/javascript" src="extra/coords.js"></script>
+    <script type="text/javascript" src="extra/check.js"></script>
 </body>
 </html>

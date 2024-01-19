@@ -48,7 +48,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="description ">
-                <h1 class="pt-5">Сервис для подбора мест<br>культурного досуга и отдыха</h1>
+                <h1 class="pt-5 overlay_color">Сервис для подбора мест<br>культурного досуга и отдыха</h1>
                 <p class="overlay_color">Ваш помощник в поиске ближайших объектов<br>при путешествии по России </p>
             </div>
         </div>
@@ -133,7 +133,7 @@
                 </div>
                 <div class="col-6 text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
                     Веб-сервис разработан студентом Московского Политеха<br>
-                    Москва, 2023
+                    Москва, 2024
                 </div>
             </div>
         </div>        

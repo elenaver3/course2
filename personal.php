@@ -191,5 +191,15 @@
         </div>
         </section>
     </main>
+    <footer class="bg-body-tertiary text-center text-lg-start">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    Веб-сервис разработан студентом Московского Политеха<br>
+                    Москва, 2024
+                </div>
+            </div>
+        </div>        
+    </footer>
 </body>
 </html>

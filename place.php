@@ -147,17 +147,24 @@
                     </p>
                     <p> Дополнительная информация:<br>
                         <?php 
-                            if ($info["website"] != "") {
-                                echo '<a target="_blank" href="'.$info["website"].'">Ссылка на сайт</a>';
+                            if ($info["website"] != "" && $info["extra_url"] == "") {
+                                echo '<a target="_blank" href="'.$info["website"].'">'.$info["website"].'</a>';
                             }
-                        ?>
-                        <br>
-                        <?php 
-                            if ($info["extra_url"] != "") {
-                                echo '<a target="_blank" href="'.$info["extra_url"].'">Ссылка на сайт</a>';
+                            if ($info["extra_url"] != "" && $info["website"] == "") {
+                                echo '<a target="_blank" href="'.$info["extra_url"].'">'.$info["extra_url"].'</a>';
                             }
                             if ($info["website"] == "" && $info["extra_url"] == "")
                                 echo 'не указана';
+                        ?>
+                        
+                        <?php 
+                            if ($info["website"] != "" && $info["extra_url"] != "") {
+                                echo '<a target="_blank" href="'.$info["website"].'">'.$info["website"].'</a>';
+                                echo '<br>';
+                                echo '<a target="_blank" href="'.$info["extra_url"].'">'.$info["extra_url"].'</a>';
+                            }
+                            
+
                         ?>
                     </p>
                     <?php
@@ -382,7 +389,16 @@
             </div>
         </div>
     </main>
-    
+    <footer class="bg-body-tertiary text-center text-lg-start">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    Веб-сервис разработан студентом Московского Политеха<br>
+                    Москва, 2024
+                </div>
+            </div>
+        </div>        
+    </footer>
     <script type="text/javascript" src="extra/coords.js"></script>
 </body>
 </html>

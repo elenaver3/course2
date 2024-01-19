@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-6 text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
                     Веб-сервис разработан студентом Московского Политеха<br>
-                    Москва, 2023
+                    Москва, 2024
                 </div>
             </div>
         </div>        
